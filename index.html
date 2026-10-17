@@ -3,15 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dr. She - White Coat Ceremony Celebration</title>
+  <title>Dr. Ghalawe - White Coat Ceremony Celebration 🩺✨</title>
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts & Custom CSS -->
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@600;700&display=swap');
     
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+      background: linear-gradient(135deg, #fff5f7 0%, #f0f4f8 100%);
+      overflow-x: hidden;
     }
 
     .font-cursive {
@@ -19,10 +23,10 @@
     }
 
     .glass-card {
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.88);
       backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.6);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
     }
 
     .flower-btn {
@@ -30,7 +34,7 @@
     }
 
     .flower-btn:hover {
-      transform: translateY(-6px) scale(1.05);
+      transform: translateY(-6px) scale(1.03);
     }
 
     .pulse-glow {
@@ -38,31 +42,45 @@
     }
 
     @keyframes pulse-glow {
-      0%, 100% { box-shadow: 0 0 15px rgba(236, 72, 153, 0.3); }
-      50% { box-shadow: 0 0 30px rgba(236, 72, 153, 0.6); }
+      0%, 100% { box-shadow: 0 0 15px rgba(236, 72, 153, 0.25); }
+      50% { box-shadow: 0 0 30px rgba(236, 72, 153, 0.5); }
+    }
+
+    /* Light Falling Confetti Canvas */
+    #confettiCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 40;
     }
   </style>
 </head>
-<body class="min-h-screen text-slate-800 pb-16">
+<body class="min-h-screen text-slate-800 pb-16 relative">
+
+  <!-- Background Light Canvas Confetti -->
+  <canvas id="confettiCanvas"></canvas>
 
   <!-- Header Banner -->
   <header class="relative bg-gradient-to-r from-rose-400 via-pink-400 to-teal-400 text-white py-12 px-4 text-center shadow-lg overflow-hidden">
     <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
     <div class="max-w-4xl mx-auto relative z-10">
-      <span class="inline-block bg-white/20 backdrop-blur-md px-4 py-1 rounded-full text-sm font-semibold tracking-wide uppercase mb-3">
+      <span class="inline-block bg-white/20 backdrop-blur-md px-4 py-1 rounded-full text-xs sm:text-sm font-semibold tracking-wide uppercase mb-3">
         🥼 White Coat Ceremony Edition 🩺
       </span>
-      <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight mb-2">
-        Huge Congratulations, Doc! 🎉
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-2">
+        Huge Congratulations, Dr. Ghalawe! 🎉
       </h1>
-      <p class="text-lg sm:text-xl font-light text-rose-50 max-w-2xl mx-auto">
-        Officiating your transition into the white coat. Surviving med school one coffee & study session at a time!
+      <p class="text-base sm:text-lg font-light text-rose-50 max-w-2xl mx-auto">
+        Officially coated & ready to conquer med school. Words can't describe how proud I am of you!
       </p>
     </div>
   </header>
 
   <!-- Main Container -->
-  <main class="max-w-4xl mx-auto px-4 mt-8 space-y-8">
+  <main class="max-w-4xl mx-auto px-4 mt-8 space-y-8 relative z-10">
 
     <!-- Badges Bar -->
     <div class="flex flex-wrap justify-center gap-3">
@@ -77,6 +95,88 @@
       </span>
     </div>
 
+    <!-- LONG DISTANCE HEARTBEAT WIDGET -->
+    <section class="glass-card rounded-3xl p-6 sm:p-8 border-t-4 border-rose-400 text-center">
+      <div class="flex items-center justify-center gap-2 text-rose-500 font-bold uppercase tracking-wider text-xs mb-2">
+        <i class="fa-solid fa-earth-americas"></i> Long Distance Support
+      </div>
+      <h2 class="text-2xl font-bold text-slate-800 mb-2">Distance Means Nothing ✈️❤️</h2>
+      <p class="text-sm text-slate-500 max-w-md mx-auto mb-6">
+        Cheering for you all the way from Riyadh no matter how many miles lie in between!
+      </p>
+
+      <div class="bg-rose-50/80 border border-rose-200 rounded-2xl p-5 max-w-lg mx-auto shadow-inner">
+        <div class="flex items-center justify-between font-bold text-sm sm:text-base text-slate-700">
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-location-dot text-rose-500"></i>
+            <span>Riyadh 🇸🇦</span>
+          </div>
+          <div class="flex-1 mx-4 border-b-2 border-dashed border-rose-300 relative flex items-center justify-center">
+            <i class="fa-solid fa-plane text-rose-500 absolute -top-2.5 bg-rose-50 px-1"></i>
+          </div>
+          <div class="flex items-center gap-2">
+            <span>Dr. Ghalawe 🥼</span>
+            <i class="fa-solid fa-heart text-rose-500"></i>
+          </div>
+        </div>
+        <p class="text-xs text-rose-600 font-semibold mt-3">
+          Status: 100% Proud & Cheering For You Every Step Of The Way!
+        </p>
+      </div>
+    </section>
+
+    <!-- FUNNY: WHITE COAT POCKET EMERGENCY SUPPLIES CHECK -->
+    <section class="glass-card rounded-3xl p-6 sm:p-8 border-t-4 border-amber-400">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center text-lg shrink-0">
+          <i class="fa-solid fa-clipboard-check"></i>
+        </div>
+        <div>
+          <h2 class="text-xl font-bold text-slate-800">White Coat Pocket Inventory Check 🩺</h2>
+          <p class="text-xs text-slate-500">Official inspection of what's inside Dr. Ghalawe's pockets right now:</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
+        <div class="bg-white p-3.5 rounded-2xl border border-slate-200 flex items-center gap-3">
+          <span class="text-xl">🩺</span>
+          <div>
+            <p class="font-bold text-slate-800">Brand New Stethoscope</p>
+            <p class="text-slate-400 text-xs">Ready to diagnose everyone</p>
+          </div>
+        </div>
+
+        <div class="bg-white p-3.5 rounded-2xl border border-slate-200 flex items-center gap-3">
+          <span class="text-xl">🖊️</span>
+          <div>
+            <p class="font-bold text-slate-800">Black Pen</p>
+            <p class="text-rose-500 text-xs font-medium">99% chance stolen by an attending doctor</p>
+          </div>
+        </div>
+
+        <div class="bg-white p-3.5 rounded-2xl border border-slate-200 flex items-center gap-3">
+          <span class="text-xl">☕</span>
+          <div>
+            <p class="font-bold text-slate-800">Emergency Coffee Stash</p>
+            <p class="text-slate-400 text-xs">Fueling post-clinic survival</p>
+          </div>
+        </div>
+
+        <div class="bg-white p-3.5 rounded-2xl border border-slate-200 flex items-center gap-3">
+          <span class="text-xl">🧠</span>
+          <div class="w-full">
+            <div class="flex justify-between font-bold text-slate-800 text-xs mb-1">
+              <span>Sanity Remaining</span>
+              <span class="text-rose-500">12%</span>
+            </div>
+            <div class="w-full bg-slate-100 rounded-full h-2">
+              <div class="bg-rose-500 h-2 rounded-full w-[12%]"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- VOICE NOTE AUDIO PLAYER CARD -->
     <section class="glass-card rounded-3xl p-6 sm:p-8 pulse-glow border-t-4 border-rose-400">
       <div class="flex flex-col sm:flex-row items-center gap-6">
@@ -87,13 +187,11 @@
           <div class="flex items-center justify-center sm:justify-start gap-2 text-xs font-bold uppercase tracking-wider text-rose-500 mb-1">
             <i class="fa-solid fa-heart"></i> Personal Voice Note
           </div>
-          <h2 class="text-2xl font-bold text-slate-800 mb-1">A Quick Message For Dr. You 🩺</h2>
+          <h2 class="text-2xl font-bold text-slate-800 mb-1">A Quick Message For Dr. Ghalawe 🩺</h2>
           <p class="text-sm text-slate-500 italic mb-4">"You're the prettiest doctor ever..."</p>
           
-          <!-- Audio Element -->
           <audio id="voiceNoteAudio" class="hidden"></audio>
 
-          <!-- Controls Container -->
           <div class="space-y-3">
             <div class="flex items-center gap-4 bg-slate-50 p-3 rounded-2xl border border-slate-200">
               <button id="playBtn" onclick="toggleAudio()" class="w-12 h-12 bg-rose-500 hover:bg-rose-600 text-white rounded-full flex items-center justify-center text-lg shadow-md transition-transform active:scale-95 shrink-0">
@@ -109,36 +207,15 @@
               </div>
             </div>
 
-            <!-- Upload Audio Option -->
             <div class="text-center sm:text-left">
               <label for="audioUpload" class="inline-flex items-center gap-2 text-xs font-medium text-rose-600 hover:text-rose-700 cursor-pointer bg-rose-50 px-3 py-1.5 rounded-lg border border-rose-200 hover:bg-rose-100 transition-colors">
-                <i class="fa-solid fa-upload"></i> Upload / Change Voice Note (.mp3 / .m4a / .wav)
+                <i class="fa-solid fa-upload"></i> Attach Your Voice Recording (.mp3 / .m4a / .wav)
               </label>
               <input type="file" id="audioUpload" accept="audio/*" onchange="handleAudioUpload(event)" class="hidden">
             </div>
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- Emergency Prescription Generator -->
-    <section class="glass-card rounded-3xl p-6 sm:p-8 border-t-4 border-teal-400 text-center">
-      <div class="inline-block bg-teal-100 text-teal-700 p-3 rounded-full text-2xl mb-3">
-        <i class="fa-solid fa-prescription-bottle-medical"></i>
-      </div>
-      <h2 class="text-2xl font-bold text-slate-800 mb-2">Doctor's Emergency RX & Burnout Fixer</h2>
-      <p class="text-sm text-slate-500 mb-6 max-w-md mx-auto">
-        Feeling tired after rounds or study sessions? Tap below to generate your mandatory non-negotiable prescription!
-      </p>
-
-      <div id="rxBox" class="bg-teal-50/60 border border-teal-200 rounded-2xl p-6 mb-6 min-h-[110px] flex flex-col items-center justify-center transition-all">
-        <p id="rxTitle" class="font-bold text-teal-800 text-lg mb-1">Rx Prescription #101</p>
-        <p id="rxContent" class="text-slate-700 font-medium text-sm sm:text-base italic">"100mg of zero studying for the rest of today."</p>
-      </div>
-
-      <button onclick="generateRX()" class="bg-gradient-to-r from-teal-500 to-emerald-500 text-white font-semibold px-6 py-3 rounded-xl shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all text-sm flex items-center gap-2 mx-auto">
-        <i class="fa-solid fa-dice"></i> Generate New Diagnosis & Remedy
-      </button>
     </section>
 
     <!-- Flower Garden Interactive -->
@@ -171,7 +248,6 @@
         </button>
       </div>
 
-      <!-- Flower Note Display -->
       <div id="flowerNote" class="mt-6 hidden bg-pink-50 border border-pink-200 rounded-2xl p-5 text-center transition-all">
         <p id="flowerNoteText" class="text-pink-800 font-medium text-sm sm:text-base font-cursive text-xl"></p>
       </div>
@@ -180,13 +256,13 @@
     <!-- Single Featured Photo Showcase -->
     <section class="glass-card rounded-3xl p-6 sm:p-8 border-t-4 border-purple-400">
       <div class="text-center mb-6">
-        <h2 class="text-2xl font-bold text-slate-800">Dr. Photo Showcase 📸</h2>
+        <h2 class="text-2xl font-bold text-slate-800">Dr. Ghalawe Photo Showcase 📸</h2>
         <p class="text-sm text-slate-500">Upload your favorite White Coat moment photo right here!</p>
       </div>
 
       <div class="max-w-md mx-auto">
         <div id="photoFrame" class="relative group rounded-2xl overflow-hidden bg-slate-100 border-2 border-dashed border-slate-300 min-h-[320px] flex flex-col items-center justify-center p-4">
-          <img id="featuredImage" src="" alt="Featured White Coat" class="hidden w-full h-[360px] object-cover rounded-xl shadow-md">
+          <img id="featuredImage" src="" alt="Ghalawe White Coat" class="hidden w-full h-[360px] object-cover rounded-xl shadow-md">
           
           <div id="placeholderText" class="text-center p-6">
             <i class="fa-solid fa-cloud-arrow-up text-4xl text-purple-400 mb-3"></i>
@@ -200,7 +276,7 @@
     </section>
 
     <!-- Non-Monetary Favors Picker -->
-    <section class="glass-card rounded-3xl p-6 sm:p-8 border-t-4 border-amber-400">
+    <section class="glass-card rounded-3xl p-6 sm:p-8 border-t-4 border-teal-400">
       <div class="text-center mb-6">
         <h2 class="text-2xl font-bold text-slate-800">Pick A Treat From Me 🎁</h2>
         <p class="text-sm text-slate-500">Pick any favor below and tap to send me your choice directly!</p>
@@ -208,21 +284,21 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <!-- Favor 1 (Heartfelt) -->
-        <div onclick="selectFavor('1,000-Word Essay on Why You\'re Amazing')" class="cursor-pointer glass-card p-5 rounded-2xl border border-amber-200 hover:border-amber-400 hover:shadow-md transition-all">
+        <div onclick="selectFavor('1,000-Word Essay on Why You\'re Amazing')" class="cursor-pointer glass-card p-5 rounded-2xl border border-teal-200 hover:border-teal-400 hover:shadow-md transition-all">
           <div class="flex items-start gap-3">
-            <div class="bg-amber-100 text-amber-600 p-3 rounded-xl text-xl shrink-0"><i class="fa-solid fa-scroll"></i></div>
+            <div class="bg-rose-100 text-rose-600 p-3 rounded-xl text-xl shrink-0"><i class="fa-solid fa-scroll"></i></div>
             <div>
               <span class="text-[10px] font-bold uppercase tracking-wider bg-rose-100 text-rose-600 px-2 py-0.5 rounded-full">Heartfelt</span>
               <h3 class="font-bold text-slate-800 mt-1 text-sm">1,000-Word Essay</h3>
-              <p class="text-xs text-slate-500 mt-1">A handwritten/typed masterpiece listing everything great about you.</p>
+              <p class="text-xs text-slate-500 mt-1">A handwritten/typed message listing everything great about you.</p>
             </div>
           </div>
         </div>
 
         <!-- Favor 2 (Heartfelt) -->
-        <div onclick="selectFavor('Custom Curated Med Study / Relax Playlist')" class="cursor-pointer glass-card p-5 rounded-2xl border border-amber-200 hover:border-amber-400 hover:shadow-md transition-all">
+        <div onclick="selectFavor('Custom Curated Med Study / Relax Playlist')" class="cursor-pointer glass-card p-5 rounded-2xl border border-teal-200 hover:border-teal-400 hover:shadow-md transition-all">
           <div class="flex items-start gap-3">
-            <div class="bg-amber-100 text-amber-600 p-3 rounded-xl text-xl shrink-0"><i class="fa-solid fa-headphones"></i></div>
+            <div class="bg-rose-100 text-rose-600 p-3 rounded-xl text-xl shrink-0"><i class="fa-solid fa-headphones"></i></div>
             <div>
               <span class="text-[10px] font-bold uppercase tracking-wider bg-rose-100 text-rose-600 px-2 py-0.5 rounded-full">Heartfelt</span>
               <h3 class="font-bold text-slate-800 mt-1 text-sm">Custom Study Playlist</h3>
@@ -232,9 +308,9 @@
         </div>
 
         <!-- Favor 3 (Funny) -->
-        <div onclick="selectFavor('2 Hours Uninterrupted Vent/Rant Session')" class="cursor-pointer glass-card p-5 rounded-2xl border border-amber-200 hover:border-amber-400 hover:shadow-md transition-all">
+        <div onclick="selectFavor('2 Hours Uninterrupted Vent/Rant Session')" class="cursor-pointer glass-card p-5 rounded-2xl border border-teal-200 hover:border-teal-400 hover:shadow-md transition-all">
           <div class="flex items-start gap-3">
-            <div class="bg-amber-100 text-amber-600 p-3 rounded-xl text-xl shrink-0"><i class="fa-solid fa-ear-listen"></i></div>
+            <div class="bg-purple-100 text-purple-600 p-3 rounded-xl text-xl shrink-0"><i class="fa-solid fa-ear-listen"></i></div>
             <div>
               <span class="text-[10px] font-bold uppercase tracking-wider bg-purple-100 text-purple-600 px-2 py-0.5 rounded-full">Funny</span>
               <h3 class="font-bold text-slate-800 mt-1 text-sm">2-Hour Rant Pass</h3>
@@ -244,9 +320,9 @@
         </div>
 
         <!-- Favor 4 (Funny) -->
-        <div onclick="selectFavor('48-Hour Message Ignore Pass (Zero Double-Texting)')" class="cursor-pointer glass-card p-5 rounded-2xl border border-amber-200 hover:border-amber-400 hover:shadow-md transition-all">
+        <div onclick="selectFavor('48-Hour Message Ignore Pass (Zero Double-Texting)')" class="cursor-pointer glass-card p-5 rounded-2xl border border-teal-200 hover:border-teal-400 hover:shadow-md transition-all">
           <div class="flex items-start gap-3">
-            <div class="bg-amber-100 text-amber-600 p-3 rounded-xl text-xl shrink-0"><i class="fa-solid fa-ghost"></i></div>
+            <div class="bg-purple-100 text-purple-600 p-3 rounded-xl text-xl shrink-0"><i class="fa-solid fa-ghost"></i></div>
             <div>
               <span class="text-[10px] font-bold uppercase tracking-wider bg-purple-100 text-purple-600 px-2 py-0.5 rounded-full">Funny</span>
               <h3 class="font-bold text-slate-800 mt-1 text-sm">48-Hour VIP Ignore Pass</h3>
@@ -257,8 +333,8 @@
       </div>
 
       <!-- Selected Favor Output -->
-      <div id="favorSelectedBox" class="hidden mt-6 bg-amber-50 border border-amber-300 rounded-2xl p-4 text-center">
-        <p class="text-xs text-amber-700 font-semibold uppercase tracking-wider">You Chosen Favor:</p>
+      <div id="favorSelectedBox" class="hidden mt-6 bg-teal-50 border border-teal-300 rounded-2xl p-4 text-center">
+        <p class="text-xs text-teal-700 font-semibold uppercase tracking-wider">Your Chosen Favor:</p>
         <p id="selectedFavorText" class="font-bold text-slate-800 text-base my-1"></p>
         <div class="flex justify-center gap-3 mt-3">
           <button onclick="sendWhatsApp()" class="bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-semibold px-4 py-2 rounded-lg flex items-center gap-2">
@@ -273,13 +349,67 @@
 
   </main>
 
-  <!-- Footer -->
-  <footer class="text-center text-xs text-slate-400 mt-12 mb-6">
-    Crafted with ❤️ for the future doctor • White Coat Celebration Page
+  <footer class="text-center text-xs text-slate-400 mt-12 mb-6 relative z-10">
+    Crafted with ❤️ for Dr. Ghalawe • White Coat Celebration Page
   </footer>
 
   <script>
-    // Audio Player JS Logic
+    // Continuous Light Falling Pastel Confetti Canvas Logic
+    const canvas = document.getElementById('confettiCanvas');
+    const ctx = canvas.getContext('2d');
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+
+    window.addEventListener('resize', () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    });
+
+    const confettiColors = ['#f472b6', '#fb7185', '#38bdf8', '#fbbf24', '#c084fc', '#a7f3d0'];
+    const confettiCount = 35;
+    const confettiParticles = [];
+
+    for (let i = 0; i < confettiCount; i++) {
+      confettiParticles.push({
+        x: Math.random() * width,
+        y: Math.random() * height - height,
+        r: Math.random() * 5 + 3,
+        d: Math.random() * confettiCount,
+        color: confettiColors[Math.floor(Math.random() * confettiColors.length)],
+        tilt: Math.floor(Math.random() * 10) - 10,
+        tiltAngleIncremental: Math.random() * 0.05 + 0.02,
+        tiltAngle: 0
+      });
+    }
+
+    function drawConfetti() {
+      ctx.clearRect(0, 0, width, height);
+      confettiParticles.forEach((p, i) => {
+        p.tiltAngle += p.tiltAngleIncremental;
+        p.y += (Math.cos(p.d) + 1 + p.r / 2) * 0.7;
+        p.x += Math.sin(p.d);
+        p.tilt = Math.sin(p.tiltAngle) * 15;
+
+        if (p.y > height) {
+          p.x = Math.random() * width;
+          p.y = -20;
+          p.tilt = Math.floor(Math.random() * 10) - 10;
+        }
+
+        ctx.beginPath();
+        ctx.lineWidth = p.r;
+        ctx.strokeStyle = p.color;
+        ctx.moveTo(p.x + p.tilt + p.r / 2, p.y);
+        ctx.lineTo(p.x + p.tilt, p.y + p.tilt + p.r / 2);
+        ctx.stroke();
+      });
+
+      requestAnimationFrame(drawConfetti);
+    }
+
+    drawConfetti();
+
+    // Audio Player Logic
     const audio = document.getElementById('voiceNoteAudio');
     const playIcon = document.getElementById('playIcon');
     const currentTimeEl = document.getElementById('currentTime');
@@ -288,7 +418,7 @@
 
     function toggleAudio() {
       if (!audio.src) {
-        alert("Please tap 'Upload / Change Voice Note' to attach your recorded audio file first!");
+        alert("Please tap 'Attach Your Voice Recording' to select your audio file!");
         return;
       }
       if (audio.paused) {
@@ -307,7 +437,7 @@
         audio.src = fileURL;
         audio.load();
         playIcon.className = 'fa-solid fa-play';
-        alert("Voice note attached successfully!");
+        alert("Voice recording attached successfully!");
       }
     }
 
@@ -337,26 +467,11 @@
       return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
     }
 
-    // Prescription Generator Logic
-    const prescriptions = [
-      { title: "Rx Prescription #101", text: "100mg of zero studying for the rest of today." },
-      { title: "Rx Prescription #102", text: "Emergency order: Mandatory 8 hours of sleep, non-negotiable." },
-      { title: "Rx Prescription #103", text: "Diagnosis: Severe case of being overworked. Remedy: Unlimited takeout & zero stress." },
-      { title: "Rx Prescription #104", text: "Prescription for 1x iced coffee and zero medical flashcards today." },
-      { title: "Rx Prescription #105", text: "Diagnosis: Looking too good in a white coat. Remedy: None available." }
-    ];
-
-    function generateRX() {
-      const random = prescriptions[Math.floor(Math.random() * prescriptions.length)];
-      document.getElementById('rxTitle').textContent = random.title;
-      document.getElementById('rxContent').textContent = `"${random.text}"`;
-    }
-
     // Flower Notes
     const flowerNotes = {
       lily: "Lilies for your elegance & poise. You carry yourself with so much grace in everything you do!",
       tulip: "Tulips for your bright energy! No matter how tough med school gets, your light always shines through.",
-      rose: "Pink Roses for pure admiration! So insanely proud of you passing your White Coat Ceremony."
+      rose: "Pink Roses for pure admiration! So insanely proud of you passing your White Coat Ceremony, Ghalawe."
     };
 
     function revealFlower(type) {
