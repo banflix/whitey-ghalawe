@@ -8,7 +8,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Google Fonts & Custom CSS -->
+  <!-- Google Fonts & Custom Styling -->
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@600;700&display=swap');
     
@@ -190,7 +190,8 @@
           <h2 class="text-2xl font-bold text-slate-800 mb-1">A Quick Message For Dr. Ghalawe 🩺</h2>
           <p class="text-sm text-slate-500 italic mb-4">"You're the prettiest doctor ever..."</p>
           
-          <audio id="voiceNoteAudio" class="hidden"></audio>
+          <!-- Audio tag directly linked to voice.mp3 -->
+          <audio id="voiceNoteAudio" src="voice.mp3" preload="metadata" class="hidden"></audio>
 
           <div class="space-y-3">
             <div class="flex items-center gap-4 bg-slate-50 p-3 rounded-2xl border border-slate-200">
@@ -205,13 +206,6 @@
                 </div>
                 <input type="range" id="seekBar" value="0" min="0" max="100" onchange="seekAudio()" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-rose-500">
               </div>
-            </div>
-
-            <div class="text-center sm:text-left">
-              <label for="audioUpload" class="inline-flex items-center gap-2 text-xs font-medium text-rose-600 hover:text-rose-700 cursor-pointer bg-rose-50 px-3 py-1.5 rounded-lg border border-rose-200 hover:bg-rose-100 transition-colors">
-                <i class="fa-solid fa-upload"></i> Attach Your Voice Recording (.mp3 / .m4a / .wav)
-              </label>
-              <input type="file" id="audioUpload" accept="audio/*" onchange="handleAudioUpload(event)" class="hidden">
             </div>
           </div>
         </div>
@@ -257,20 +251,18 @@
     <section class="glass-card rounded-3xl p-6 sm:p-8 border-t-4 border-purple-400">
       <div class="text-center mb-6">
         <h2 class="text-2xl font-bold text-slate-800">Dr. Ghalawe Photo Showcase 📸</h2>
-        <p class="text-sm text-slate-500">Upload your favorite White Coat moment photo right here!</p>
+        <p class="text-sm text-slate-500">A special moment celebrating your White Coat milestone!</p>
       </div>
 
       <div class="max-w-md mx-auto">
-        <div id="photoFrame" class="relative group rounded-2xl overflow-hidden bg-slate-100 border-2 border-dashed border-slate-300 min-h-[320px] flex flex-col items-center justify-center p-4">
-          <img id="featuredImage" src="" alt="Ghalawe White Coat" class="hidden w-full h-[360px] object-cover rounded-xl shadow-md">
+        <div id="photoFrame" class="relative group rounded-2xl overflow-hidden bg-slate-100 border-2 border-slate-200 min-h-[320px] flex flex-col items-center justify-center p-2 shadow-md">
+          <!-- Image tag directly linked to white.jpg -->
+          <img id="featuredImage" src="white.jpg" alt="Ghalawe White Coat" class="w-full h-[380px] object-cover rounded-xl shadow-sm" onerror="this.style.display='none'; document.getElementById('placeholderText').style.display='block';">
           
-          <div id="placeholderText" class="text-center p-6">
-            <i class="fa-solid fa-cloud-arrow-up text-4xl text-purple-400 mb-3"></i>
-            <p class="text-sm font-semibold text-slate-700">Click to upload your White Coat Photo</p>
-            <p class="text-xs text-slate-400 mt-1">Supports JPG, PNG, WEBP</p>
+          <div id="placeholderText" class="text-center p-6 hidden">
+            <i class="fa-solid fa-image text-4xl text-purple-400 mb-3"></i>
+            <p class="text-sm font-semibold text-slate-700">Make sure 'white.jpg' is placed in the same folder!</p>
           </div>
-
-          <input type="file" id="imageUpload" accept="image/*" onchange="handleImageUpload(event)" class="absolute inset-0 opacity-0 cursor-pointer w-full h-full">
         </div>
       </div>
     </section>
@@ -418,26 +410,17 @@
 
     function toggleAudio() {
       if (!audio.src) {
-        alert("Please tap 'Attach Your Voice Recording' to select your audio file!");
+        alert("Audio file 'voice.mp3' not found. Please make sure 'voice.mp3' is placed in the same folder as index.html!");
         return;
       }
       if (audio.paused) {
-        audio.play();
+        audio.play().catch(e => {
+          alert("Could not play 'voice.mp3'. Please check that the file name matches 'voice.mp3' exactly and is in the same folder!");
+        });
         playIcon.className = 'fa-solid fa-pause';
       } else {
         audio.pause();
         playIcon.className = 'fa-solid fa-play';
-      }
-    }
-
-    function handleAudioUpload(event) {
-      const file = event.target.files[0];
-      if (file) {
-        const fileURL = URL.createObjectURL(file);
-        audio.src = fileURL;
-        audio.load();
-        playIcon.className = 'fa-solid fa-play';
-        alert("Voice recording attached successfully!");
       }
     }
 
@@ -448,6 +431,10 @@
         currentTimeEl.textContent = formatTime(audio.currentTime);
         durationEl.textContent = formatTime(audio.duration);
       }
+    };
+
+    audio.onloadedmetadata = () => {
+      durationEl.textContent = formatTime(audio.duration);
     };
 
     audio.onended = () => {
@@ -479,22 +466,6 @@
       const text = document.getElementById('flowerNoteText');
       text.textContent = flowerNotes[type];
       box.classList.remove('hidden');
-    }
-
-    // Image Upload Logic
-    function handleImageUpload(event) {
-      const file = event.target.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-          const img = document.getElementById('featuredImage');
-          const placeholder = document.getElementById('placeholderText');
-          img.src = e.target.result;
-          img.classList.remove('hidden');
-          placeholder.classList.add('hidden');
-        };
-        reader.readAsDataURL(file);
-      }
     }
 
     // Favor Selection Logic
